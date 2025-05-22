@@ -21,4 +21,4 @@ A simple Python-based command-line banking system that allows users to create ac
 ```bash
 command-line-bank-system/
 ├── README.md
-└── bank_system.py
+└── main.py
