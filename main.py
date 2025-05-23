@@ -17,25 +17,25 @@ class Account:
         if amount > 0:
             self.balance += amount
             self.transactions.append(Transaction(amount, 'Deposit'))
-            print(f"Deposit of ${amount} succesful. New Balanace is ${self.balance}\n") # Add the choice to use country's currency symbol
+            print(f"Deposit of ₵{amount} succesful. New Balance is ₵{self.balance}\n") # Add the choice to use country's currency symbol
         else:
-            print("Invalid deposit amoun\nt")
+            print("Invalid deposit amount\n")
 
     def withdraw(self, amount):
         if amount > 0 and amount <= self.balance:
             self.balance -= amount
             self.transactions.append(Transaction(amount, 'Withdrawal'))
-            print(f"Withdrawal of ${amount} succesful. New balance is ${self.balance}\n")
+            print(f"Withdrawal of ₵{amount} succesful. New balance is ₵{self.balance}\n")
         else:
             print(f"Invalid withdrawal amount or insufficient funds\n") # Specify which case it is
 
     def display_transaction(self):
         print("\nTransaction History: ")
         for transaction in self.transactions:
-            print(f"${transaction.amount} {transaction.transaction_type}")
+            print(f"₵{transaction.amount} {transaction.transaction_type}")
 
     def display_balance(self):
-        print(f"\nCurrent Balace for account{self.account_number}: ${self.balance}")
+        print(f"\nCurrent Balance for account{self.account_number}: ₵{self.balance}")
 
 
 class Bank:
@@ -49,7 +49,7 @@ class Bank:
             self.accounts[account_number] = new_account
             print(f"Account created succesfully for {holder_name}. Account number is {account_number}\n")
         else:
-            print("Accountwith the given number already exists.\n")
+            print("Account with the given number already exists.\n")
 
     def get_account(self, account_number):
         return self.accounts.get(account_number)
